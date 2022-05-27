@@ -14,14 +14,6 @@ public final class Node {
     /** Nó à diretira do nó atual */
     private Node right;
     
-    public Node() {
-        this(null, null, null);
-    }
-
-    public Node(String name){
-        this(name, null, null);
-    }
-    
     public Node(String name, Node left, Node rigth) {
         this.name  = name;
         this.left  = left;
@@ -80,19 +72,6 @@ public final class Node {
      */
     public void setRight(Node right) {
         this.right = right;
-    }
-    
-    @Override
-    public int hashCode() {
-        return name == null ? 0 : name.hashCode();
-    }
-     
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof Node)) { 
-            return false;
-        }
-        return ((Node) obj).hashCode() == hashCode();
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Tree {
     private Node tree;
 
     public Tree(String root) {
-        this.tree = new Node(root);
+        this.tree = new Node(root, null, null);
     }
 
     /**
@@ -21,10 +21,10 @@ public class Tree {
      * @param nodeName Nome do novo nó
      * @param side Lado em que deve ser adicionado o novo nó
      */
-    public void addNode(String parentNode, String nodeName, Side side){
+    public void addNode(String parentNode, String nodeName, Side side) {
         if (side == Side.RIGHT) {
             addRightNode(parentNode, nodeName);
-        }  else if (side == Side.LEFT) {
+        }  else {
             addLeftNode(parentNode, nodeName);
         }
     }
@@ -40,7 +40,7 @@ public class Tree {
         if (node == null) {
             return;
         }
-        node.setLeft(new Node(nodeName));
+        node.setLeft(new Node(nodeName, null, null));
     }
      
     /**
@@ -54,7 +54,7 @@ public class Tree {
         if (node == null) {
             return;
         }
-        node.setRight(new Node(nodeName));
+        node.setRight(new Node(nodeName, null, null));
     }
      
     /**
@@ -85,7 +85,7 @@ public class Tree {
      */
     public void clear(String root) {
         nullNodes(tree);
-        tree = new Node(root);
+        tree = new Node(root, null, null);
     }
      
     /**
@@ -141,7 +141,7 @@ public class Tree {
      * 
      * @return String árvore em ordem
      */
-    public String InOrdem(){
+    public String inOrdem(){
         if (tree == null) { 
             return "";
         }
